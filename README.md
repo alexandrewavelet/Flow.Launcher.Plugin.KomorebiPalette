@@ -18,9 +18,14 @@
   <img src="assets/demo.gif" width="1024" alt="Komorebi Palette demo: switching layouts, promoting a window, zen gaps, sending an app to another workspace and jumping back to it">
 </p>
 
-<p align="center">
-  ▶ <a href="assets/demo.mp4"><b>Watch the demo in full resolution</b></a> (MP4, 47 s)
-</p>
+<details>
+<summary><b>▶ Watch the demo in full resolution</b> (47 s)</summary>
+
+https://github.com/user-attachments/assets/1fce110b-b654-4578-98ed-1dbd4326d0d1
+
+<p align="center"><a href="assets/demo.mp4">Download the original video</a> (MP4, 1920 × 804)</p>
+
+</details>
 
 Keyboard shortcuts are great for the things you do every minute. For everything else, there is the palette: type `k`, then what you want — `k grid`, `k send 3`, `k go spotify`, `k zen` — and press <kbd>Enter</kbd>. No more shortcuts to remember for the commands you only need once a day.
 
