@@ -1,0 +1,7 @@
+# Dependencies are installed by the release workflow (pip install -t ./lib)
+lib/
+
+__pycache__/
+*.pyc
+*.log
+*.zip

@@ -1,0 +1,55 @@
+name: Publish Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - .github/workflows/*
+      - README.md
+      - CHANGELOG.md
+      - assets/**
+
+env:
+  python_ver: "3.11"
+  zip_name: Flow.Launcher.Plugin.KomorebiPalette.zip
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.python_ver }}
+      - name: Install dependencies
+        run: pip install -r ./requirements.txt -t ./lib
+      - name: Run tests
+        run: python -m unittest discover -s tests -t .
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.python_ver }}
+      - name: Get version
+        id: version
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: plugin.json
+          prop_path: Version
+      - name: Install dependencies and package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ./requirements.txt -t ./lib
+          zip -r ${{ env.zip_name }} . -x '*.git*' 'tests/*' 'scripts/*' 'assets/*' '*__pycache__*' '*.log'
+      - name: Publish
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.zip_name }}
+          tag_name: v${{ steps.version.outputs.prop }}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://www.flowlauncher.com/schemas/plugin.schema.json",
+  "ID": "8e3f6c1a-4b2d-4f7e-9a51-3c0d2b7e6f14",
+  "ActionKeywords": ["k"],
+  "Name": "Komorebi Palette",
+  "Description": "A command palette for the komorebi tiling window manager: windows, workspaces, layouts, gaps and configuration",
+  "Author": "Alexandre Wavelet",
+  "Version": "1.0.0",
+  "Language": "python",
+  "Website": "https://github.com/alexandrewavelet/Flow.Launcher.Plugin.KomorebiPalette",
+  "IcoPath": "Images\\icon.png",
+  "ExecuteFileName": "main.py"
+}

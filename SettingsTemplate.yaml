@@ -1,0 +1,63 @@
+#$schema: https://www.flowlauncher.com/schemas/settings-template.schema.json
+body:
+  - type: textBlock
+    attributes:
+      description: Leave a path empty to detect it automatically.
+  - type: inputWithFileBtn
+    attributes:
+      name: komorebic_path
+      label: komorebic.exe
+      description: Default is komorebic from PATH, then C:\Program Files\komorebi\bin\komorebic.exe.
+      defaultValue: ""
+  - type: inputWithFileBtn
+    attributes:
+      name: komorebi_config_path
+      label: komorebi.json
+      description: Default is %KOMOREBI_CONFIG_HOME%\komorebi.json, then %USERPROFILE%\komorebi.json.
+      defaultValue: ""
+  - type: inputWithFileBtn
+    attributes:
+      name: whkdrc_path
+      label: whkdrc
+      description: Default is %WHKD_CONFIG_HOME%\whkdrc, then %USERPROFILE%\.config\whkdrc.
+      defaultValue: ""
+  - type: inputWithFileBtn
+    attributes:
+      name: editor_path
+      label: Editor for configuration files
+      description: Default is the Windows default editor for the file type (Notepad for whkdrc).
+      defaultValue: ""
+  - type: checkbox
+    attributes:
+      name: start_whkd
+      label: Restart whkd with komorebi
+      description: Adds --whkd to komorebic start and stop.
+      defaultValue: true
+  - type: checkbox
+    attributes:
+      name: start_bar
+      label: Restart komorebi-bar with komorebi
+      description: Adds --bar to komorebic start and stop.
+      defaultValue: false
+  - type: input
+    attributes:
+      name: zen_workspace_padding
+      label: Zen mode workspace padding (px)
+      defaultValue: "80"
+  - type: input
+    attributes:
+      name: zen_container_padding
+      label: Zen mode container padding (px)
+      defaultValue: "15"
+  - type: checkbox
+    attributes:
+      name: show_apps_in_search
+      label: Show open apps in search results
+      description: Lists matching windows ("Go to …") next to the actions, without typing "go".
+      defaultValue: true
+  - type: input
+    attributes:
+      name: action_delay_ms
+      label: Action delay (ms)
+      description: Time given to Flow to close before an action runs. Increase it if actions target the wrong window.
+      defaultValue: "600"
